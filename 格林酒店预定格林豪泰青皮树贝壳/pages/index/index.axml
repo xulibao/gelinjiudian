@@ -1,0 +1,71 @@
+<!-- 小程序收藏组件，更多高级用法请参考文档：https://docs.alipay.com/mini/component/component-favorite -->
+<view  class="bgview">
+  <view class="header">
+      <view class="heder-bg"> </view>
+      <view class="yuding">
+        <view class="tabs">
+          <view class="tabs-bar">
+          <block a:for = "{{tabs}}">
+            <view class="tabs-bar-tab" data-index="{{index}}" onTap="onTabBarTap">
+              <view class="tabs-bar-tab-title {{activeTab === index ? 'active':''}} ">
+                {{item}}
+              </view>
+            </view>
+          </block>
+          </view>
+        </view>
+        <view >
+          <swiper indicator-dots="{{false}}" onChange="intervalChange" current="{{activeTab}}" >
+            <block a:for="{{reserves}}">
+              <swiper-item >
+                <view style="background-color:#ffffff ;width:100%;height:360rpx">
+                  <view class="view-line-bottom">
+                    <image class="logo" mode="aspectFit" src="/image/index_local_write.png"/>
+                    <text class="logo-title">{{item.name}}</text>
+                    <image class="logo-fujin" mode="aspectFit" src="/image/index_local_green.png"/>
+                    <text class="logo-title-fujin">附近酒店</text>
+                  </view>
+                  <view class="view-line-bottom">
+                    <image class="logo" mode="aspectFit" src="/image/index_time_write.png"/>
+                    <text class="logo-title">{{item.startTime}}</text>
+                    <text class="logo-endTime">{{item.endTime}}</text>
+                  </view>
+                  <view class="view-line-bottom">
+                     <image class="logo" mode="aspectFit" src="/image/index_search_write.png"/>
+                    <text class="logo-title">{{item.serchContent}}</text>
+                  </view>
+                  
+                  <button class="commit-btn" type="primary" >开始预订</button>
+        
+                </view>
+
+                <!-- <view style="background-color: {{item}};width:100%;height:300rpx"/> -->
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+
+      </view>
+  </view>
+
+  <view class="middleview-line-bottom">
+    <view class="middle-view-line"></view>
+  </view>
+
+  <swiper indicator-dots="{{true}}" >
+    <block a:for="{{bannerdata}}">
+      <swiper-item >
+        <view class="banner-bg">
+        <block a:for = "{{item}}">
+            <!-- <swiper-item class="banner-swiper" > -->
+             <view class="banner-item-bg">
+             <image class="banner-item" mode="scaleToFill" src="{{item.image}}"/>
+            </view>
+            <!-- </swiper-item> -->
+        </block>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+</view>

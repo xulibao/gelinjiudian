@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/wallet/wallet",
+    "pages/mine/mine"
+  ],
+  "window": {
+    "defaultTitle": "格林酒店预定格林豪泰青皮树贝壳"
+  },
+  "tabBar": {
+    "textColor": "#000000",
+    "selectedColor": "#26B969",
+    "backgroundColor": "#ffffff",
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "icon": "image/tab_yuding.png",
+        "activeIcon":"image/tab_yuding_activity.png",
+        "name":"预定"
+      },
+      {
+        "pagePath": "pages/wallet/wallet",
+        "name": "钱包"
+      },
+        {
+        "pagePath": "pages/mine/mine",
+        "name": "我"
+      }
+    ]
+  }
+}
